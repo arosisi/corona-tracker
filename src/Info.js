@@ -31,10 +31,14 @@ class Info extends React.Component {
     );
 
     return (
-      <div style={{ marginTop: 20 }}>
+      <div style={{ marginTop: 40 }}>
         <p style={{ marginBottom: "1rem" }}>
           Click{" "}
-          <a href='https://www.who.int/news-room/q-a-detail/q-a-coronaviruses'>
+          <a
+            href='https://www.who.int/news-room/q-a-detail/q-a-coronaviruses'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
             here
           </a>{" "}
           for more information from the WHO
