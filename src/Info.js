@@ -31,7 +31,7 @@ class Info extends React.Component {
     );
 
     return (
-      <div style={{ marginTop: 40 }}>
+      <div style={{ marginTop: 20 }}>
         <p style={{ marginBottom: "1rem" }}>
           Click{" "}
           <a
