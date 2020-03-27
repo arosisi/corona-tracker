@@ -1,7 +1,6 @@
 import React from "react";
 import {
   AreaChart,
-  linearGradient,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -14,8 +13,8 @@ class Graph extends React.Component {
     const { width, height, raw, name } = this.props;
     const data = raw[name];
     return (
-      <div>
-        <h3 style={{ marginTop: 10 }}>{!name ? "Country" : name}</h3>
+      <div style={{ marginTop: 10 }}>
+        <h3>{!name ? "Country" : name}</h3>
         <AreaChart
           width={width}
           height={height}
