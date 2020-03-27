@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 
 import Globe from "./Globe";
 import Graph from "./Graph";
+import Info from "./Info";
 
 import { data } from "./data.json";
 
@@ -76,7 +77,19 @@ class App extends React.Component {
             )}
           </Col>
           <Col xs={12} lg={6}>
-            {loading ? null : <Graph raw={raw} name={name} />}
+            {loading ? null : (
+              <div style={{ display: "flex", flexDirection: "column" }}>
+                <Graph
+                  width={
+                    windowWidth >= 992 ? windowWidth / 2 - 30 : windowWidth - 30
+                  }
+                  height={250}
+                  raw={raw}
+                  name={name}
+                />
+                <Info />
+              </div>
+            )}
           </Col>
         </Row>
       </div>

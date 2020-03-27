@@ -59,15 +59,8 @@ export default class extends React.Component {
           ${`
               <br />
               Confirmed: <i>${confirmed}</i><br />
+              ${recovered ? `Recovered: <i>${recovered}</i><br />` : ""}
               Deaths: <i>${deaths}</i>
-              ${
-                recovered
-                  ? `
-                  <br />
-                  Recovered: <i>${recovered}</i>
-                `
-                  : ""
-              }
             `}
         `}
         onPolygonClick={({ name }) => drawGraph(name)}
