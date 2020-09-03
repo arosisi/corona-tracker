@@ -38,12 +38,16 @@ class App extends React.Component {
             raw: result,
             data: data.map(item => {
               const { name } = item;
-              const found = result[name] && result[name].slice(-1)[0];
+              const now = result[name] && result[name].slice(-1)[0];
+              const last = result[name] && result[name].slice(-2)[0];
               return {
                 ...item,
-                confirmed: found ? found.confirmed : 0,
-                deaths: found ? found.deaths : 0,
-                recovered: found ? found.recovered : 0
+                confirmed: now ? now.confirmed : 0,
+                deaths: now ? now.deaths : 0,
+                recovered: now ? now.recovered : 0,
+                justConfirmed: now ? now.confirmed - last.confirmed : 0,
+                justDeaths: now ? now.deaths - last.deaths : 0,
+                justRecovered: now ? now.recovered - last.recovered : 0
               };
             })
           });
@@ -76,6 +80,7 @@ class App extends React.Component {
               />
             )}
           </Col>
+
           <Col xs={12} lg={6}>
             {loading ? null : (
               <div style={{ display: "flex", flexDirection: "column" }}>
