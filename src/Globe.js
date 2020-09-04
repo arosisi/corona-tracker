@@ -60,7 +60,7 @@ export default class extends React.Component {
     const aggregated = dataType === AGGREGATED;
     return (
       <div>
-        <Dropdown style={{ position: "fixed", top: 5, left: 20, zIndex: 1 }}>
+        <Dropdown style={{ position: "absolute", top: 5, left: 20, zIndex: 1 }}>
           <Dropdown.Toggle variant='success'>Data type</Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item
